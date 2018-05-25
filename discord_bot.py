@@ -9,8 +9,16 @@ bot = commands.Bot(command_prefix="$", description="A bot that gives FK schedule
 today = date(2018, 8, 20)
 
 quest_schedule = {"визитка": [date(today.year, 7, 21), date(today.year, 7, 22)],
+			"драбблы нерейтинг": [date(today.year, 7, 26), date(today.year, 7, 27)],
+			"мини нерейтинг": [date(today.year, 7, 31), date(today.year, 8, 1)],
+			"визуал нерейтинг": [date(today.year, 8, 5), date(today.year, 8, 6)],
+			"миди нерейтинг": [date(today.year, 8, 10), date(today.year, 8, 11)],
 			"челлендж": [date(today.year, 8, 15), date(today.year, 8, 16)],
 			"бб": [date(today.year, 8, 26), date(today.year, 8, 27)],
+			"драбблы рейтинг": [date(today.year, 9, 6), date(today.year, 9, 7)],
+			"мини рейтинг": [date(today.year, 9, 11), date(today.year, 9, 12)],
+			"визуал рейтинг": [date(today.year, 9, 16), date(today.year, 9, 17)],
+			"миди рейтинг": [date(today.year, 9, 21), date(today.year, 9, 22)],
 			"спецквест": [date(today.year, 9, 26), date(today.year, 9, 27)]}
 
 level_schedule = {1: date(today.year, 7, 21),
