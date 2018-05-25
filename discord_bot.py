@@ -1,5 +1,4 @@
 import discord
-import conf
 from discord.ext import commands
 from datetime import date
 import os
@@ -199,4 +198,4 @@ async def help_():
 async def start():
     await bot.say("Привет, сейчас у меня " + TODAY.strftime("%d.%m.%Y") + ", для справки вызови $help_")
 
-bot.run(os.environ["BOT_TOKEN"])
+bot.run(os.environ['BOT_TOKEN'])
