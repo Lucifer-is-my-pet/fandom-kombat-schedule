@@ -2,6 +2,7 @@ import discord
 import conf
 from discord.ext import commands
 from datetime import date
+import os
 
 bot = commands.Bot(command_prefix="$", description="A bot that gives FK schedule")
 
@@ -198,4 +199,4 @@ async def help_():
 async def start():
     await bot.say("Привет, сейчас у меня " + TODAY.strftime("%d.%m.%Y") + ", для справки вызови $help_")
 
-bot.run(conf.token)
+bot.run(os.environ["BOT_TOKEN"])
