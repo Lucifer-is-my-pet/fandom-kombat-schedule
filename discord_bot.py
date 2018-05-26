@@ -68,6 +68,12 @@ async def on_ready():
     print("Logged in as " + bot.user.name)
 
 
+@bot.event
+async def on_command_error(exception, context):
+    await bot.send_message(context.message.channel, content="Неверная команда {}. "
+                                                            "Вызови справку: `$help_`".format(context.invoked_with))
+
+
 @bot.command()
 async def deadline():
     await bot.say("Похуй, пляшем :dancer: :man_dancing:")
