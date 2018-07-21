@@ -5,8 +5,7 @@ import os
 
 bot = commands.Bot(command_prefix="$", description="A bot that gives FK schedule")
 
-# TODAY = date.today()
-TODAY = date(2018, 8, 20)
+TODAY = date.today()
 
 QUEST_SCHEDULE = {"визитка": [date(TODAY.year, 7, 21), date(TODAY.year, 7, 22)],
                   "драбблы нерейтинг": [date(TODAY.year, 7, 26), date(TODAY.year, 7, 27)],
