@@ -7,25 +7,25 @@ bot = commands.Bot(command_prefix="$", description="A bot that gives FK schedule
 
 TODAY = date.today()
 
-QUEST_SCHEDULE = {"визитка": [date(TODAY.year, 7, 21), date(TODAY.year, 7, 22)],
-                  "драбблы нерейтинг": [date(TODAY.year, 7, 26), date(TODAY.year, 7, 27)],
-                  "мини нерейтинг": [date(TODAY.year, 7, 31), date(TODAY.year, 8, 1)],
-                  "визуал нерейтинг": [date(TODAY.year, 8, 5), date(TODAY.year, 8, 6)],
-                  "миди нерейтинг": [date(TODAY.year, 8, 10), date(TODAY.year, 8, 11)],
-                  "челлендж": [date(TODAY.year, 8, 15), date(TODAY.year, 8, 16)],
-                  "бб": [date(TODAY.year, 8, 26), date(TODAY.year, 8, 27)],
-                  "драбблы рейтинг": [date(TODAY.year, 9, 6), date(TODAY.year, 9, 7)],
-                  "мини рейтинг": [date(TODAY.year, 9, 11), date(TODAY.year, 9, 12)],
-                  "визуал рейтинг": [date(TODAY.year, 9, 16), date(TODAY.year, 9, 17)],
-                  "миди рейтинг": [date(TODAY.year, 9, 21), date(TODAY.year, 9, 22)],
+QUEST_SCHEDULE = {"визитка": [date(TODAY.year, 1, 19), date(TODAY.year, 1, 20)],
+                  "драбблы нерейтинг": [date(TODAY.year, 1, 26), date(TODAY.year, 1, 27)],
+                  "мини нерейтинг": [date(TODAY.year, 1, 26), date(TODAY.year, 1, 27)],
+                  "визуал нерейтинг": [date(TODAY.year, 2, 1), date(TODAY.year, 2, 2)],
+                  "миди нерейтинг": [date(TODAY.year, 1, 26), date(TODAY.year, 1, 27)],
+                  "челлендж": [date(TODAY.year, 2, 8), date(TODAY.year, 2, 9)],
+                  #"бб": [date(TODAY.year, 8, 26), date(TODAY.year, 8, 27)],
+                  "драбблы рейтинг": [date(TODAY.year, 2, 16), date(TODAY.year, 2, 17)],
+                  "мини рейтинг": [date(TODAY.year, 2, 16), date(TODAY.year, 2, 17)],
+                  "визуал рейтинг": [date(TODAY.year, 2, 22), date(TODAY.year, 2, 23)],
+                  "миди рейтинг": [date(TODAY.year, 2, 16), date(TODAY.year, 2, 17)],
                   "спецквест": [date(TODAY.year, 9, 26), date(TODAY.year, 9, 27)]}
 
-LEVEL_SCHEDULE = {1: date(TODAY.year, 7, 21),
+'''LEVEL_SCHEDULE = {1: date(TODAY.year, 7, 21),
                   2: date(TODAY.year, 7, 26),
                   3: date(TODAY.year, 8, 15),
                   4: date(TODAY.year, 8, 26),
                   5: date(TODAY.year, 9, 6),
-                  6: date(TODAY.year, 9, 26)}
+                  6: date(TODAY.year, 9, 26)}'''
 
 VOTE_SCHEDULE = [
     {"name": "визитка", "beginning": date(TODAY.year, 7, 23), "end": date(TODAY.year, 8, 13),
@@ -80,19 +80,19 @@ async def deadline():
 
 @bot.command()
 async def bonus():
-    await bot.say("Бонус выкладывается с 23.07 по 19.10 включительно, в дни, свободные от выкладок")
+    await bot.say("Бонус выкладывается с 21.01 по 14.03 включительно, в дни, свободные от выкладок")
 
 
 @bot.command()
 async def non_comp():
-    await bot.say("Внеконкурс выкладывается с 28.07 по 19.10 включительно, в дни, свободные от выкладок.\n**Не ранее "
+    await bot.say("Внеконкурс выкладывается с 21.01 по 14.03 включительно, в дни, свободные от выкладок.\n**Не ранее "
                   "конкурсной выкладки соответствующего левела и квеста.**")
 
 
 @bot.command()
 async def pic():
     schedule = discord.Embed()
-    schedule.set_image(url="http://funkyimg.com/i/2DVSq.png")
+    schedule.set_image(url="http://funkyimg.com/i/2MdrS.png")
     await bot.say(embed=schedule)
 
 
@@ -121,7 +121,7 @@ async def quest(sought_quest, *args):
     else:
         await bot.say(quest_first_date.strftime("%d.%m"))
 
-
+'''
 @bot.command()
 async def level(level):
     try:
@@ -141,7 +141,7 @@ async def level(level):
         await bot.say(level_date.strftime("%d.%m") + ", осталось дней: {}".format(level_days_left))
     else:
         await bot.say(level_date.strftime("%d.%m"))
-
+'''
 
 @bot.command()
 async def vote(sought_quest: str, *args):
@@ -184,9 +184,9 @@ async def help_():
                                                                         " **название** и оставшееся"
                                                                         " количество дней до начала, если он в будущем."
                                                                         " Пример: `$quest миди рейтинг`", inline=False)
-    embed.add_field(name="$level %номер%",
-                    value="Выводит дату начала левела номер **номер** и оставшееся количество дней,"
-                          " если он в будущем. Пример: `$level 3`", inline=False)
+    #embed.add_field(name="$level %номер%",
+     #               value="Выводит дату начала левела номер **номер** и оставшееся количество дней,"
+      #                    " если он в будущем. Пример: `$level 3`", inline=False)
     embed.add_field(name="$bonus", value="Выводит даты выкладки бонуса", inline=False)
     embed.add_field(name="$non_comp", value="Выводит даты выкладки внеконкурса", inline=False)
     embed.add_field(name="$deadline", value="Подбадривает", inline=False)
